@@ -1,0 +1,6 @@
+setwd("../Dropbox/Coursera/Exploratory data analysis/Programming assignment 1")
+dat <- read.csv("household_power_consumption.txt", sep=";", header=T)
+red <- subset(dat, as.character(dat$Date) == "1/2/2007" | as.character(dat$Date) == "2/2/2007")
+hist(as.numeric(levels(red[,3]))[red[,3]], main="Global Active Power", xlab="Global Active Power (kilowatts)", col="red")
+dev.copy(png, file = "Plot1.png")
+dev.off()
